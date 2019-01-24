@@ -2,7 +2,7 @@
 
 This is a minimal React static site bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-The sample app is deployed on Render at https://cra.app.render.com.
+The sample app is deployed on Render at https://cra.onrender.com.
 
 ## Deployment
 
