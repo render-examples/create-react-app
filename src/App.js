@@ -20,7 +20,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <span>{process.env.REACT_APP_IS_PULL_REQUEST}</span>
+        <span>IS PULL REQUEST: {process.env.REACT_APP_IS_PULL_REQUEST}</span>
       </div>
     );
   }
