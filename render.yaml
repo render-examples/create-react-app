@@ -1,6 +1,6 @@
 previewsEnabled: true
 services:
- - type: web
+  - type: web
     name: Create React App Demo
     env: static
     buildCommand: yarn build
