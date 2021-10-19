@@ -1,0 +1,11 @@
+previewsEnabled: true
+services:
+ - type: web
+    name: Create React App Demo
+    env: static
+    buildCommand: yarn build
+    staticPublishPath: ./build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: index.html
