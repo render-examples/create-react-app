@@ -9,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hello from Render! Testing CI/CD on commits. Development branch test push
+            Hello from Render! Testing CI/CD on commits. Development branch test push. Dev branch again test with PR.
           </p>
           <a
             className="App-link"
