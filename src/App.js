@@ -15,7 +15,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Adelle is calling
+            Adelle is calling from the other side.
           </a>
         </header>
       </div>
