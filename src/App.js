@@ -15,7 +15,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Adelle is calling from the other side.
+            Labryinth is in town
           </a>
         </header>
       </div>
