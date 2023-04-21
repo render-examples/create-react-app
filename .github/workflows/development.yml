@@ -35,3 +35,5 @@ jobs:
         with:
           args: deploy --dir=build --prod
           secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+      - name: Request Netlify Webhook
+        run: curl -X POST -d {}  ${{ secrets.NETLIFY_BUILD_HOOK_DEV }}
