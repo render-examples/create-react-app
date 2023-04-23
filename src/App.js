@@ -7,13 +7,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>
-            I'm jealous of the way you're happy without me
+            Let's talk about the people here
           </p>
           <p>
-            He's a good music producer!
+            Are they even good?
           </p>
           <p>
-            He's a good person overall!
+            That's incredibly suspicious
           </p>
           <p>
             He's a creative genius!
