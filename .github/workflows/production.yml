@@ -4,8 +4,9 @@ name: Production workflow
 # When workflow is triggered
 on:
   push:
-    tags:
-      - "v*"
+    branches: [main]
+      tags:
+        - "v*"
 
 # Jobs to carry out
 jobs:
@@ -25,12 +26,7 @@ jobs:
       # Run npm install and build on our code
       - run: npm install
       - run: npm run build --if-present
-      # Deploy to Netlify using our production secrets
+      # Deploy to Netlify using our build hook, but only if tests pass
       - name: Deploy to netlify
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_PROD }}
-        with:
-          args: deploy --dir=build --prod
-          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID_PROD"]'
+        if: success()
+        run: curl -X POST -d {}  ${{ secrets.NETLIFY_BUILD_HOOK_PROD }}
