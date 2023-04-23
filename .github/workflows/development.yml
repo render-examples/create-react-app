@@ -9,6 +9,24 @@ on:
 
 # Jobs to carry out
 jobs:
+  test:
+    # Operating system to run job on
+    runs-on: ubuntu-latest
+
+    # Steps in job
+    steps:
+      # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+      # Install NodeJS
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      # Run npm install and test on our code
+      - run: npm install
+      - run: npm run test
+
   deploy:
     # Operating system to run job on
     runs-on: ubuntu-latest
@@ -26,8 +44,10 @@ jobs:
       # Run npm install and build on our code
       - run: npm install
       - run: npm run build --if-present
-      # Deploy to Netlify using our dev secrets
+
+      # Deploy to Netlify using our dev secrets, but only if tests pass
       - name: Deploy to netlify
+        if: success()
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -36,4 +56,5 @@ jobs:
           args: deploy --dir=build --prod
           secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
       - name: Request Netlify Webhook
+        if: success()
         run: curl -X POST -d {}  ${{ secrets.NETLIFY_BUILD_HOOK_DEV }}
