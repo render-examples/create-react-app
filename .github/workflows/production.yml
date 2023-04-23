@@ -5,15 +5,12 @@ name: Production workflow
 on:
   push:
     branches: [main]
-    tags:
-      - "v*"
 
 # Jobs to carry out
 jobs:
   deploy:
     # Operating system to run job on
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
     # Steps in job
     steps:
       # Get code from repo
