@@ -12,6 +12,12 @@ class App extends Component {
           <p>
             He's a good music producer!
           </p>
+          <p>
+            He's a good person overall!
+          </p>
+          <p>
+            He's a creative genius!
+          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
