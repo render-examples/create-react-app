@@ -28,13 +28,4 @@ jobs:
       # Deploy to Netlify using our dev secrets, but only if tests pass
       - name: Deploy to netlify
         if: success()
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=build --prod
-          secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-      - name: Request Netlify Webhook
-        if: success()
         run: curl -X POST -d {}  ${{ secrets.NETLIFY_BUILD_HOOK_DEV }}
