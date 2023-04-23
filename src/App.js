@@ -15,7 +15,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Labryinth is in town
+            Labryinth is in town again!
           </a>
         </header>
       </div>
