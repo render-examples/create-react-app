@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import Main from './pages/Main'
+
+import {
+  createBrowserRouter,
+  RouterProvider
+} from 'react-router-dom'
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello from Render!
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
 
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Main />
+  }
+]);
+
+
+function App() {
+  return (
+  <>
+  <RouterProvider router={router}/>
+    <div className="App"/>
+  </> 
+  )
+}
 export default App;
