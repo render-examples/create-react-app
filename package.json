@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-query": "^3.39.3",
     "react-scripts": "^4.0.0"
   },
   "scripts": {
