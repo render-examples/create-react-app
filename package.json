@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^5.17.3",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-query": "^3.39.3",
-    "react-scripts": "^4.0.0"
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^4.0.0",
+    "sort-by": "^1.2.0"
   },
   "scripts": {
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && set NODE_ENV=local && react-scripts start",
     "start-all-interfaces": "HOST=0.0.0.0 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
