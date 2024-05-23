@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {QueryClient, QueryClientProvider} from "react-query";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const queryClient = new QueryClient();
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>
+    },
+]);
+
 ReactDOM.render(
     <QueryClientProvider client={queryClient}>
-        <App/>
+        <RouterProvider router={router} />
     </QueryClientProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
