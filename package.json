@@ -8,10 +8,12 @@
     "match-sorter": "^6.3.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-hook-form": "^7.52.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^4.0.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "styled-components": "^6.1.11"
   },
   "scripts": {
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && set NODE_ENV=local && react-scripts start",
