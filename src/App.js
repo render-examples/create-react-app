@@ -1,20 +1,30 @@
 import React from 'react'
-import {useQuery} from 'react-query';
 
 import logo from './logo.svg';
 import './App.css';
-import {sayHelloWorld} from "./api/helloWorld";
+import {useNavigate} from "react-router-dom";
+
+export const USER_LS_KEY = "user";
 
 function App() {
-    const query = useQuery('hello_world', sayHelloWorld);
+    const navigate = useNavigate();
+
+    React.useEffect(() => {
+        // go to login page
+        const alreadyLoggedIn = localStorage.getItem(USER_LS_KEY) !== null;
+        if (!alreadyLoggedIn) {
+            navigate("/login");
+        }
+
+        // TODO: else -> go to user's page
+    }, [navigate]);
 
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>
-                    {query.isLoading ? "Loading..." : query.isError ? "Error..." :
-                        query.data}
+                    hi
                 </p>
                 <a
                     className="App-link"
