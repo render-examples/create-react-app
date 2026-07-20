@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-paper: #faf8f4;
+  --color-paper-alt: #f1ede4;
+  --color-lead: #16151c;
+  --color-lead-soft: #38364a;
+  --color-ink: #1c1a24;
+  --color-ink-soft: #57536b;
+
+  --color-glass-blue: #2452c9;
+  --color-glass-violet: #7c3aed;
+  --color-glass-amber: #dc9a1f;
+  --color-glass-ruby: #c0304a;
+
+  --background: var(--color-paper);
+  --surface: #ffffff;
+  --foreground: var(--color-ink);
+  --foreground-muted: var(--color-ink-soft);
+  --border-color: #e4dfd3;
+}
+
+.dark {
+  --background: var(--color-lead);
+  --surface: #1f1d29;
+  --foreground: #f2efe8;
+  --foreground-muted: #b9b5c9;
+  --border-color: #322f40;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border-color);
+
+  --color-glass-blue: var(--color-glass-blue);
+  --color-glass-violet: var(--color-glass-violet);
+  --color-glass-amber: var(--color-glass-amber);
+  --color-glass-ruby: var(--color-glass-ruby);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--color-glass-amber);
+  color: var(--color-lead);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glass-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-glass-in {
+  animation: glass-in 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-glass-in {
+    animation: none;
+  }
+}

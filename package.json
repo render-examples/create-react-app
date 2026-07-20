@@ -1,7 +1,9 @@
 {
-  "name": "create-react-app",
+  "name": "elsje-codes",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "postcss-normalize": "^10.0.1",
@@ -9,20 +11,26 @@
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
   },
+>>>>>>> 8205e8bd2204159c713a8ab1fb4d740e97c784dc
   "scripts": {
-    "start": "react-scripts start",
-    "start-all-interfaces": "HOST=0.0.0.0 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
